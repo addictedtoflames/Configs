@@ -1,0 +1,67 @@
+exec xsetroot -cursor_name left_ptr
+exec feh --bg-scale ~/Pictures/rainbow-wallpaper-18.jpg
+startup_message off
+
+escape F13
+set fgcolor white
+set bgcolor #303030
+set fwcolor green
+set bwcolor red
+set bargravity c
+exec xmobar
+set padding 0 0 0 20
+
+alias promptsplit exec split=$(ratpoison -c "prompt Split: ") ; ratpoison -c "split $split"
+alias prompthsplit exec split=$(ratpoison -c "prompt Hsplit: ") ; ratpoison -c "hsplit $split"
+
+unbind k
+unbind C-s
+unbind C-S
+bind space exec
+bind semicolon colon
+bind j focusdown
+bind k focusup
+bind h focusleft
+bind l focusright
+bind J exchangedown
+bind K exchangeup
+bind H exchangeleft
+bind L exchangeright
+bind C-k delete
+bind c exec xterm -rv
+bind f exec conkeror
+bind g exec chromium
+bind F1 exec rpws 1 
+bind F2 exec rpws 2 
+bind F3 exec rpws 3 
+bind F4 exec rpws 4 
+bind F5 exec rpws 5 
+bind F6 exec rpws 6 
+bind numbersign number
+bind C-s promptsplit
+bind C-S prompthsplit
+bind q only
+
+definekey top s-d exec ratpoison -c "banish" -c "hsplit 3/4" 
+definekey top s-s only
+definekey top M-y redo
+definekey top M-z undo
+definekey top F12 exec xterm -rv
+definekey top XF86AudioRaiseVolume exec amixer -q set Master 1%+
+definekey top XF86AudioLowerVolume exec amixer -q set Master 1%-
+definekey top M-XF86AudioRaiseVolume exec amixer -q set Master 10%+
+definekey top M-XF86AudioLowerVolume exec amixer -q set Master 10%-
+definekey top XF86AudioMute exec amixer -q set Master 0%
+definekey top XF86AudioPlay exec mpc toggle
+definekey top XF86AudioNext exec mpc next
+definekey top XF86AudioPrev exec mpc prev
+definekey top M-Tab focus
+definekey top F1 undo
+definekey top F2 redo
+definekey top S-Up exec xterm -rv -e top
+
+
+exec nm-applet
+exec setxkbmap gb
+exec /usr/bin/rpws init 6 -k
+
