@@ -1,5 +1,5 @@
 exec xsetroot -cursor_name left_ptr
-exec feh --bg-scale ~/Pictures/rainbow-wallpaper-18.jpg
+exec feh --bg-scale ~/Pictures/wallpaper.jpg
 startup_message off
 
 escape F13
@@ -61,7 +61,6 @@ definekey top F2 redo
 definekey top S-Up exec xterm -rv -e top
 
 
-exec nm-applet
 exec setxkbmap gb
 exec /usr/bin/rpws init 6 -k
 
