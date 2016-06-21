@@ -41,6 +41,7 @@ bind numbersign number
 bind C-s promptsplit
 bind C-S prompthsplit
 bind q only
+bind S-Up exec xterm -rv -e top
 
 definekey top s-d exec ratpoison -c "banish" -c "hsplit 3/4" 
 definekey top s-s only
@@ -58,7 +59,6 @@ definekey top XF86AudioPrev exec mpc prev
 definekey top M-Tab focus
 definekey top F1 undo
 definekey top F2 redo
-definekey top S-Up exec xterm -rv -e top
 
 
 exec setxkbmap gb
