@@ -59,6 +59,8 @@ definekey top M-Tab focus
 definekey top F1 undo
 definekey top F2 redo
 definekey top XF86WLAN exec xterm -rv -e wicd-curses
+definekey top XF86MonBrightnessUp exec light -A 10
+definekey top XF86MonBrightnessDown exec light -U 10
 
 
 
