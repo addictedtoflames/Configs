@@ -1,5 +1,5 @@
 //Set editor to vim
-editor_shell_command = "xterm -rv -e vim";
+editor_shell_command = "ratpoison -c 'split 3/4' -c focusdown ; xterm -rv -e vim ";
 
 //Uses HJKL keys for page navigation
 require("global-overlay-keymap");
@@ -10,8 +10,8 @@ define_key_alias( "C-j", "C-n");
 define_key(content_buffer_normal_keymap, "C-h", "back");
 define_key(content_buffer_normal_keymap, "Backspace", "back");
 define_key(content_buffer_normal_keymap, "C-l", "forward");
-define_key(content_buffer_normal_keymap, "h", "buffer-next");
-define_key(content_buffer_normal_keymap, "l", "buffer-previous");
+define_key(content_buffer_normal_keymap, "h", "buffer-previous");
+define_key(content_buffer_normal_keymap, "l", "buffer-next");
 
 //Open URL in new window
 define_key(content_buffer_normal_keymap, "C-g", "find-url-new-buffer");

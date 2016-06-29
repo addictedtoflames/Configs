@@ -30,7 +30,6 @@ bind L exchangeright
 bind C-k delete
 bind c exec xterm -rv
 bind f exec conkeror
-bind g exec chromium
 bind F1 exec rpws 1 
 bind F2 exec rpws 2 
 bind F3 exec rpws 3 
@@ -43,7 +42,7 @@ bind C-S prompthsplit
 bind q only
 bind Up exec xterm -rv -e top
 
-definekey top s-d exec ratpoison -c "banish" -c "hsplit 3/4" 
+definekey top s-d exec ratpoison -c "hsplit 3/4" 
 definekey top s-s only
 definekey top M-y redo
 definekey top M-z undo
@@ -59,6 +58,8 @@ definekey top XF86AudioPrev exec mpc prev
 definekey top M-Tab focus
 definekey top F1 undo
 definekey top F2 redo
+definekey top XF86WLAN exec xterm -rv -e wicd-curses
+
 
 
 exec setxkbmap gb
