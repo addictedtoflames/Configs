@@ -28,7 +28,7 @@ bind K exchangeup
 bind H exchangeleft
 bind L exchangeright
 bind C-k delete
-bind c exec xterm -rv
+bind c exec ratpoison -c 'split 3/4' -c focusdown -c exec 'xterm -rv'
 bind f exec conkeror
 bind F1 exec rpws 1 
 bind F2 exec rpws 2 
@@ -41,6 +41,7 @@ bind C-s promptsplit
 bind C-S prompthsplit
 bind q only
 bind Up exec xterm -rv -e top
+bind backslash exec ~/Shellscripts/fullscreen/fullscreen
 
 definekey top s-d exec ratpoison -c "hsplit 3/4" 
 definekey top s-s only
@@ -51,7 +52,7 @@ definekey top XF86AudioRaiseVolume exec amixer -q set Master 1%+
 definekey top XF86AudioLowerVolume exec amixer -q set Master 1%-
 definekey top M-XF86AudioRaiseVolume exec amixer -q set Master 10%+
 definekey top M-XF86AudioLowerVolume exec amixer -q set Master 10%-
-definekey top XF86AudioMute exec amixer -q set Master 0%
+definekey top XF86AudioMute exec amixer -q set Master toggle
 definekey top XF86AudioPlay exec mpc toggle
 definekey top XF86AudioNext exec mpc next
 definekey top XF86AudioPrev exec mpc prev
@@ -61,8 +62,8 @@ definekey top F2 redo
 definekey top XF86WLAN exec xterm -rv -e wicd-curses
 definekey top XF86MonBrightnessUp exec light -A 10
 definekey top XF86MonBrightnessDown exec light -U 10
-
-
+definekey top XF86Sleep exec systemctl suspend
+definekey top F11 exec xterm -rv -e vim
 
 exec setxkbmap gb
 exec /usr/bin/rpws init 6 -k
