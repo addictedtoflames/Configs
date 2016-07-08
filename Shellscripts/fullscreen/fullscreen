@@ -2,12 +2,19 @@
 cd ~/Shellscripts/fullscreen
 padding=$(ratpoison -c 'set padding')
 if [ "$padding" != '0 0 0 20' ]
+	### Restores to normal mode and restores workspace layout to normal
 then
+	feh --bg-scale ~/Pictures/wallpaper.jpg
+	xmobar &
 	ratpoison -c 'set padding 0 0 0 20' -c "set fwcolor $(cat fg)" -c "set bwcolor $(cat bg)" -c "frestore $(cat oldframes$(rpws current))"
+
+	### Enters fullscreen mode, sets background to black and removes window borders
 else
 	echo $(ratpoison -c 'set fwcolor') > ./fg
 	echo $(ratpoison -c 'set bwcolor') > ./bg
 	rm oldframes$(rpws current)
 	ratpoison -c fdump > ~/Shellscripts/fullscreen/oldframes$(rpws current)
 	ratpoison -c 'set padding 0 0 0 0' -c 'set fwcolor black' -c 'set bwcolor black' -c 'only'
+	xsetroot -solid black
+	pkill xmobar
 fi

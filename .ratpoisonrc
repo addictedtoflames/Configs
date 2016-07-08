@@ -17,6 +17,7 @@ alias prompthsplit exec split=$(ratpoison -c "prompt Hsplit: ") ; ratpoison -c "
 unbind k
 unbind C-s
 unbind C-S
+bind Escape abort
 bind space exec
 bind semicolon colon
 bind j focusdown
@@ -42,6 +43,9 @@ bind C-S prompthsplit
 bind q only
 bind Up exec xterm -rv -e top
 bind backslash exec ~/Shellscripts/fullscreen/fullscreen
+bind F12 exec ratpoison -c hsplit -c focusright -c "exec xterm -rv"
+bind d remove
+bind y exec xterm -rv mpsyt
 
 definekey top s-d exec ratpoison -c "hsplit 3/4" 
 definekey top s-s only
@@ -64,6 +68,10 @@ definekey top XF86MonBrightnessUp exec light -A 10
 definekey top XF86MonBrightnessDown exec light -U 10
 definekey top XF86Sleep exec systemctl suspend
 definekey top F11 exec xterm -rv -e vim
+definekey top KP_Left focusleft
+definekey top KP_Right focusright
+definekey top KP_Up focusup
+definekey top KP_Down focusdown
 
 exec setxkbmap gb
 exec /usr/bin/rpws init 6 -k
